@@ -1,0 +1,72 @@
+* {
+  font-family: 'Lato';
+  color: #4F4F4F;
+}
+
+
+header {
+  width: 100%;
+  height: 87px;
+  display: inline-block;
+  background-color: white;
+  border-bottom: 1px solid #BDBDBD;
+}
+
+.logo {
+  margin-top: 19px;
+}
+
+.logo img {
+  width: 70px;
+}
+
+.learnmorebutton {
+  display: inline-block;
+  margin-top: 38px;
+}
+
+.learnmorebutton button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none !important;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.joinbutton {
+  display: inline-block;
+  margin-top: 38px;
+  width: 11% !important;
+}
+
+.joinbutton button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none !important;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.loginbutton {
+  display: inline-block;
+  margin-top: 38px;
+  width: 10% !important;
+
+}
+
+.loginbutton button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none !important;
+  font-size: 25px;
+  font-weight: 300;
+}
