@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Row, Col, Grid, Modal, Button } from 'react-bootstrap';
 
 export default class Header extends Component {
   
@@ -7,7 +7,8 @@ export default class Header extends Component {
     super(props);
     this.state = {
       showLoginModal: false,
-      showRegisterModal: false
+      showRegisterModal: false,
+      loggedIn: false
     };
   }
 
@@ -32,19 +33,33 @@ export default class Header extends Component {
     });
   }
 
+  login = () => {
+    this.setState({
+      loggedIn: true
+    });
+  }
+
+  logout = () => {
+    this.setState({
+      loggedIn: false
+    });
+  }
+
   render() {
     return (
       <header className="container-fluid">
-        <div className="row">
-          <div className="col-md-1 logo">
+        <Row>
+          <Col md={1} className="logo">
             <img src="../style/images/headerImages/KrewBetaLogo.png" />
-          </div>
-          <ul className="header-button-panel col-md-11">
-            <li><a className="header-button">Learn</a></li>
-            <li><a className="header-button" onClick={this.openRegisterModal}>Join Us</a></li>
-            <li><a className="header-button" onClick={this.openLoginModal}>Log In</a></li>
-          </ul>
-        </div>
+          </Col>
+          <Col md={11}>
+            <ul className="header-button-panel">
+              <li><a className="header-button">Learn</a></li>
+              { !this.state.loggedIn ? <li><a className="header-button" onClick={this.openRegisterModal}>Join Us</a></li> : null }
+              { !this.state.loggedIn ? <li><a className="header-button" onClick={this.openLoginModal}>Log In</a></li> : <Button onClick={this.logout}>Log Out</Button> }
+            </ul>
+          </Col>
+        </Row>
 
         <Modal show={this.state.showLoginModal} onHide={this.closeModal}>
           <Modal.Header closeButton>
@@ -52,6 +67,7 @@ export default class Header extends Component {
           </Modal.Header>
           <Modal.Body>
             This is the login modal text.
+            <Button onClick={this.login}>Log In</Button>
             </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.closeModal}>Close</Button>
