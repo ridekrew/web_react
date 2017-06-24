@@ -14,10 +14,10 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <div>
       <Header />
-      <div className="col-md-6">
+      <div className="col-md-5">
         <BookingForm />
       </div>
-      <div className="col-md-6">
+      <div className="col-md-7">
         <App />
       </div>
     </div>
