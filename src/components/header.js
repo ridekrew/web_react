@@ -5,18 +5,14 @@ export default class Header extends Component {
     return (
       <header className="container-fluid">
         <div className="row">
-          <div className="col-md-8 logo">
+          <div className="col-md-1 logo">
             <img src="../style/images/headerImages/KrewBetaLogo.png" />
           </div>
-          <div className="col-md-1 learnmorebutton">
-            <button>Learn</button>
-          </div>
-          <div className="col-md-1 joinbutton">
-            <button>Join Us</button>
-          </div>
-          <div className="col-md-1 loginbutton">
-            <button>Log In</button>
-          </div>
+          <ul className="header-button-panel col-md-11">
+            <li><a className="header-button">Learn</a></li>
+            <li><a className="header-button">Join Us</a></li>
+            <li><a className="header-button">Log In</a></li>
+          </ul>
         </div>
       </header>
     );

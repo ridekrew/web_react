@@ -3,70 +3,40 @@
   color: #4F4F4F;
 }
 
-
 header {
-  width: 100%;
-  height: 87px;
   display: inline-block;
   background-color: white;
   border-bottom: 1px solid #BDBDBD;
 }
 
-.logo {
-  margin-top: 19px;
-}
-
 .logo img {
-  width: 70px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 40px;
+  cursor: pointer;
 }
 
-.learnmorebutton {
+.header-button-panel {
+  list-style-type: none;
+  margin-bottom: 0;
+  margin-top: 15px;
+  text-align: right;
+}
+
+.header-button-panel li{
+  display: inline;
+  margin-left: 25px;
+}
+
+.header-button {
+  color: #4F4F4F;
   display: inline-block;
-  margin-top: 38px;
-}
-
-.learnmorebutton button {
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  overflow: hidden;
-  outline:none !important;
-  font-size: 25px;
+  cursor: pointer;
+  font-size: 1.2em;
   font-weight: 300;
 }
 
-.joinbutton {
-  display: inline-block;
-  margin-top: 38px;
-  width: 11% !important;
-}
-
-.joinbutton button {
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  overflow: hidden;
-  outline:none !important;
-  font-size: 25px;
-  font-weight: 300;
-}
-
-.loginbutton {
-  display: inline-block;
-  margin-top: 38px;
-  width: 10% !important;
-
-}
-
-.loginbutton button {
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  overflow: hidden;
-  outline:none !important;
-  font-size: 25px;
-  font-weight: 300;
+.header-button:hover {
+    color: #f0a5a7;
+    text-decoration: none;
 }
