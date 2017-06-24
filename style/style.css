@@ -3,15 +3,19 @@
   color: #4F4F4F;
 }
 
+/******************
+** Header
+*******************/
 header {
   display: inline-block;
   background-color: white;
   border-bottom: 1px solid #BDBDBD;
+  margin-bottom: 30px;
 }
 
 .logo img {
   margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   width: 40px;
   cursor: pointer;
 }
@@ -23,7 +27,7 @@ header {
   text-align: right;
 }
 
-.header-button-panel li{
+.header-button-panel li {
   display: inline;
   margin-left: 25px;
 }
@@ -39,4 +43,26 @@ header {
 .header-button:hover {
     color: #f0a5a7;
     text-decoration: none;
+}
+
+/******************
+** Booking Form
+*******************/
+.booking-header h1 {
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.text-emphasis {
+  color: #f0a5a7;
+}
+
+.booking-form input {
+  display: block;
+  margin-bottom: 45px;
+  border: none;
+  width: 50%;
+  font-size: 1.3em;
+  font-weight: 300;
+  border-bottom: 1px solid #BDBDBD;
 }
