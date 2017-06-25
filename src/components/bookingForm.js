@@ -10,7 +10,8 @@ class BookingForm extends Component {
         this.state = {
             date: '',
             riders: 1,
-            price: 0
+            price: 0,
+            priceLoaded: true
         }
     }
 
@@ -34,41 +35,53 @@ class BookingForm extends Component {
 
     handleOrigin = (address) => {
         this.props.updateOrigin(address);
-        this.calculatePrice();
+        this.calculatePrice(address, this.props.destination);
     }
 
     handleDestination = (address) => {
         this.props.updateDestination(address);
-        this.calculatePrice();
+        this.calculatePrice(this.props.origin, address);
     }
 
-    calculatePrice = (address) => {
-        var origin = [this.props.origin];
-        var destination = [this.props.destination];
+    calculatePrice = (origin, destination) => {
+        this.setState({
+            priceLoaded: false
+        });
+        var origin = [origin];
+        var destination = [destination];
         var distanceMatrix = new google.maps.DistanceMatrixService();
 		var distanceRequest = { origins: origin, destinations: destination, travelMode: google.maps.TravelMode.DRIVING, unitSystem: google.maps.UnitSystem.IMPERIAL, avoidHighways: false, avoidTolls: false };
         var price = 0;
-        distanceMatrix.getDistanceMatrix(distanceRequest, (response, status) => {
-			if (status !== google.maps.DistanceMatrixStatus.OK) {
-				console.log("There was an error.");
-			} else {
-				var responseFields = response.rows[0].elements[0];
-				var distance = responseFields.distance.value / 1609.344; // Convert meters to miles for use in pricing model
-				var duration = responseFields.duration.value / 60.0; // Convert seconds to minutes
-                console.log("Distance", distance, "Duration", duration);
-				if (distance <= 100) {
-					price = ((0.5 * duration + 0.2 * distance) * 1.4) + 1.5
-				} else if (distance <= 200) {
-					price = ((0.44 * duration + 0.18 * distance) * 1.325) + 1.5
-				} else {
-					price = ((0.4166 * duration + 0.16 * distance) * 1.25) + 1.5
-				}
-			}
+        if (origin == '' || destination == '') {
             this.setState({
-                price: price
+                priceLoaded: true
             });
-            return this.state.price;
-        });
+            return price;
+        } else {
+            distanceMatrix.getDistanceMatrix(distanceRequest, (response, status) => {
+                if (status !== google.maps.DistanceMatrixStatus.OK) {
+                    console.log("There was an error.");
+                } else {
+                    console.log(response);
+                    var responseFields = response.rows[0].elements[0];
+                    var distance = responseFields.distance.value / 1609.344; // Convert meters to miles for use in pricing model
+                    var duration = responseFields.duration.value / 60.0; // Convert seconds to minutes
+                    console.log("Distance", distance, "Duration", duration);
+                    if (distance <= 100) {
+                        price = ((0.5 * duration + 0.2 * distance) * 1.4) + 1.5
+                    } else if (distance <= 200) {
+                        price = ((0.44 * duration + 0.18 * distance) * 1.325) + 1.5
+                    } else {
+                        price = ((0.4166 * duration + 0.16 * distance) * 1.25) + 1.5
+                    }
+                }
+                this.setState({
+                    price: price,
+                    priceLoaded: true
+                });
+                return this.state.price;
+            });
+        }
     }
 
     render() {
@@ -114,7 +127,7 @@ class BookingForm extends Component {
                             <RiderPanel addRider={this.addRider} removeRider = {this.removeRider} riders={this.state.riders}/>
                         </Col>
                         <Col md={7}>
-                            <Price price={this.state.price} riders={this.state.riders}/>
+                            {this.state.priceLoaded ? <Price price={this.state.price} riders={this.state.riders}/> : null }
                         </Col>
                     </Row>
                 </div>

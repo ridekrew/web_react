@@ -21,7 +21,7 @@ export default class App extends Component {
         });
     }
 
-    updateDestination = (address) => {
+    updateDestination = (address, callback) => {
         this.setState({
             destination: address
         });
