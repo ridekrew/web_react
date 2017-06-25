@@ -6,6 +6,7 @@ import Header from './components/header';
 
 import App from './components/app';
 import BookingForm from './components/bookingForm';
+import InfoPanel from './components/infoPanel';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -14,11 +15,11 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <div>
       <Header />
-      <div className="col-md-6">
+      <div className="col-md-5">
         <BookingForm />
       </div>
-      <div className="col-md-6">
-        <App />
+      <div className="col-md-7">
+        <InfoPanel />
       </div>
     </div>
   </Provider>
