@@ -4,25 +4,31 @@ import BookingForm from './bookingForm';
 import InfoPanel from './infoPanel';
 import EducationPanel from './educationPanel';
 
+const google = window.google;
+
 export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            origin: ''
+            origin: '',
+            destination: ''
         }
     }
 
-    updateOrigin = (e) => {
+    updateOrigin = (address) => {
         this.setState({
-            origin: e.target.value 
+            origin: address
+        });
+    }
+
+    updateDestination = (address) => {
+        this.setState({
+            destination: address
         });
     }
 
     validAddress = (address) => {
-      if (address == "Dallas, TX") {
-        return true;
-      }
-      return false;
+      return address == 'Dallas, TX';
     }
 
     render() {
@@ -30,7 +36,11 @@ export default class App extends Component {
             <div>
                 <Header />
                 <div className="col-md-5">
-                    <BookingForm updateOrigin={this.updateOrigin} origin={this.state.origin}/>
+                    <BookingForm 
+                      updateOrigin={this.updateOrigin} 
+                      origin={this.state.origin} 
+                      updateDestination={this.updateDestination}
+                      destination={this.state.destination} />
                 </div>
                 <div className="col-md-7">
                     { this.validAddress(this.state.origin) ? <InfoPanel /> : <EducationPanel /> }

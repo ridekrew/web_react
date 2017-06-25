@@ -17,7 +17,7 @@ export default class Price extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Button className="booking-button">Book!</Button>
+                    <Button className="booking-button">View Available Bookings</Button>
                 </Row>
             </Grid>
         );
