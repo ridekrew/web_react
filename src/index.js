@@ -14,13 +14,7 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <div>
-      <Header />
-      <div className="col-md-5">
-        <BookingForm />
-      </div>
-      <div className="col-md-7">
-        <InfoPanel />
-      </div>
+      <App />
     </div>
   </Provider>
   , document.querySelector('.container-fluid'));

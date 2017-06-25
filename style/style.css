@@ -1,6 +1,7 @@
 * {
   font-family: 'Lato';
   color: #4F4F4F;
+  font-weight: 300;
 }
 
 /******************
@@ -60,7 +61,7 @@ header {
 
 .booking-form input {
   display: block;
-  margin-bottom: 35px;
+  margin-bottom: 50px;
   padding-bottom: 5px;
   border: none;
   width: 100%;
@@ -81,20 +82,44 @@ header {
 .rider-panel {
   margin-bottom: 35px;
   height: 125px;
+  text-align: center;
 }
 
+.riders-header {
+  font-weight: 300;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+
+/******************
+** Rider Panel
+*******************/
+
 .riders {
-  font-size: 4em;
+  font-size: 3.8em;
   cursor: pointer;
 }
 
 .new-riders {
   margin-left: 8px;
-  font-size: 4.7em;
+  font-size: 4.2em;
   cursor: pointer;
 }
 
 .riders path {
+  color: #bcdbe9;
+}
+
+#first-rider {
+  cursor: default;
+}
+
+#first-rider path:hover {
+  color: #bcdbe9 !important;
+}
+
+.riders path:hover {
   color: #f0a5a7;
 }
 
@@ -102,23 +127,45 @@ header {
   height: 55px;
 }
 
-.price {
-  float: right;
-  margin-left: 15px;
-  height: 64px;
-  font-size: 2.6em;
+.new-riders path:hover {
   color: green;
-}
-
-.riders-header {
-  font-weight: 300;
-  font-size: 1.3em;
 }
 
 .rider-text {
   text-align: center;
+  margin-top: 10px;
+  font-size: 1em;
 }
 
+/******************
+** Price
+*******************/
+.price {
+  margin: 0;
+  text-align: center;
+  font-size: 1.8em;
+  color: green;
+}
+
+.price-subtitle {
+  text-align: center;
+  margin: 0;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.price-column {
+  border-right: 1px solid black;
+}
+
+.booking-button {
+  margin-top: 30px;
+  width: 100%;
+  background-color: #f0a5a7;
+  color: white;
+  font-size: 1.5em !important;
+  font-weight: 300 !important;
+}
 /******************
 ** Info Panel
 *******************/
@@ -166,4 +213,30 @@ header {
   -o-transition: all 1s ease;
   -ms-transition: all 1s ease;
   transition: all 1s ease;
+}
+
+/******************
+** Education Panel
+*******************/
+
+.education-image-carousel img {
+  border-radius: 10px;
+}
+
+.education-panel {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.education-panel h1 {
+  margin-bottom: 30px;
+}
+
+.education-panel h3 {
+  margin-top: 30px;
+  font-weight: 300;
+}
+
+.education-emphasis {
+  color: #bcdbe9;
 }
