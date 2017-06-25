@@ -32,7 +32,17 @@ class BookingForm extends Component {
         });
     }
 
-    calculatePrice = () => {
+    handleOrigin = (address) => {
+        this.props.updateOrigin(address);
+        this.calculatePrice();
+    }
+
+    handleDestination = (address) => {
+        this.props.updateDestination(address);
+        this.calculatePrice();
+    }
+
+    calculatePrice = (address) => {
         var origin = [this.props.origin];
         var destination = [this.props.destination];
         var distanceMatrix = new google.maps.DistanceMatrixService();
@@ -45,6 +55,7 @@ class BookingForm extends Component {
 				var responseFields = response.rows[0].elements[0];
 				var distance = responseFields.distance.value / 1609.344; // Convert meters to miles for use in pricing model
 				var duration = responseFields.duration.value / 60.0; // Convert seconds to minutes
+                console.log("Distance", distance, "Duration", duration);
 				if (distance <= 100) {
 					price = ((0.5 * duration + 0.2 * distance) * 1.4) + 1.5
 				} else if (distance <= 200) {
@@ -56,6 +67,7 @@ class BookingForm extends Component {
             this.setState({
                 price: price
             });
+            return this.state.price;
         });
     }
 
@@ -88,10 +100,12 @@ class BookingForm extends Component {
                 <div className="booking-form">
                     <PlacesAutocomplete
                         inputProps={originInputProps}
-                        classNames={addressCSS} />
+                        classNames={addressCSS}
+                        onSelect={this.handleOrigin} />
                     <PlacesAutocomplete
                         inputProps={destinationInputProps}
-                        classNames={addressCSS} />
+                        classNames={addressCSS}
+                        onSelect={this.handleDestination} />
                     <input placeholder="What day?" value={this.state.date} onChange={this.updateDate}></input>
                     <input placeholder="What time?" value={this.state.date} onChange={this.updateDate}></input>
                     <Row className="rider-panel">

@@ -28,7 +28,7 @@ export default class App extends Component {
     }
 
     validAddress = (address) => {
-      return address == 'Dallas, TX';
+      return false;
     }
 
     render() {

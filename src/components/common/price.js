@@ -12,7 +12,7 @@ export default class Price extends Component {
                         <p className="price-subtitle">per person</p>
                     </Col>
                     <Col md={6}>
-                        <p className="price" id="total">{"$" + (this.props.price).toFixed(2)}</p>
+                        <p className="price" id="total">{"$" + (parseFloat(this.props.price)).toFixed(2)}</p>
                         <p className="price-subtitle" id="total">total</p>
                     </Col>
                 </Row>
