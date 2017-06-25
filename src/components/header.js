@@ -63,7 +63,9 @@ export default class Header extends Component {
 
         <Modal show={this.state.showLoginModal} onHide={this.closeModal}>
           <Modal.Header closeButton>
-            <Modal.Title>Login to Krew Profile</Modal.Title>
+            <Modal.Title>
+              <h2>Login to Krew</h2>
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             This is the login modal text.

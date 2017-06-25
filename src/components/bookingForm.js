@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Row, Col } from 'react-bootstrap';
+import RiderPanel from './common/riderPanel';
 
 class BookingForm extends Component {
     constructor(props) {
@@ -39,6 +40,16 @@ class BookingForm extends Component {
                     <input placeholder="Where should we pick you up?" value={this.state.origin} onChange={this.updateOrigin}></input>
                     <input placeholder="Where are you going?" value={this.state.destination} onChange={this.updateDestination}></input>
                     <input placeholder="What day?" value={this.state.date} onChange={this.updateDate}></input>
+                    <input placeholder="What time?" value={this.state.date} onChange={this.updateDate}></input>
+                    <h3 className="riders-header">How many riders?</h3>
+                    <Row className="rider-panel">
+                        <Col md={6}>
+                            <RiderPanel />
+                        </Col>
+                        <Col md={6}>
+                            <span className="price">$14 | $28</span>
+                        </Col>
+                    </Row>
                     <Button className="booking-submit">Book!</Button>
                 </div>
             </div>

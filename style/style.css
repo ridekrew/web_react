@@ -60,7 +60,7 @@ header {
 
 .booking-form input {
   display: block;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
   padding-bottom: 5px;
   border: none;
   width: 100%;
@@ -76,6 +76,47 @@ header {
   font-size: 1.3em !important;
   border-radius: 10px;
   width: 120px;
+}
+
+.rider-panel {
+  margin-bottom: 35px;
+  height: 125px;
+}
+
+.riders {
+  font-size: 4em;
+  cursor: pointer;
+}
+
+.new-riders {
+  margin-left: 8px;
+  font-size: 4.7em;
+  cursor: pointer;
+}
+
+.riders path {
+  color: #f0a5a7;
+}
+
+.new-riders path {
+  height: 55px;
+}
+
+.price {
+  float: right;
+  margin-left: 15px;
+  height: 64px;
+  font-size: 2.6em;
+  color: green;
+}
+
+.riders-header {
+  font-weight: 300;
+  font-size: 1.3em;
+}
+
+.rider-text {
+  text-align: center;
 }
 
 /******************
@@ -113,7 +154,7 @@ header {
 
 .info-image {
   max-height: 160px;
-  min-width: 160px;
+  max-width: 160px;
   cursor: pointer;
   -webkit-filter: brightness(100%);
 }
