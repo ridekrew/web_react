@@ -21,14 +21,14 @@ export default class App extends Component {
         });
     }
 
-    updateDestination = (address, callback) => {
+    updateDestination = (address) => {
         this.setState({
             destination: address
         });
     }
 
     validAddress = (address) => {
-      return false;
+        return false;
     }
 
     render() {
