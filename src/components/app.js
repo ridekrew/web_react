@@ -35,7 +35,8 @@ export default class App extends Component {
         return (
             <div>
                 <Header />
-                <div className="col-md-5">
+                <h1 className="coming-soon">Ride with your Krew very soon!</h1>
+                {/*<div className="col-md-5">
                     <BookingForm 
                       updateOrigin={this.updateOrigin} 
                       origin={this.state.origin} 
@@ -44,7 +45,7 @@ export default class App extends Component {
                 </div>
                 <div className="col-md-7">
                     { this.validAddress(this.state.origin) ? <InfoPanel /> : <EducationPanel /> }
-                </div>
+                </div>*/}
           </div>
         );
     }

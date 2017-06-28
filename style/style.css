@@ -250,3 +250,14 @@ header {
 .education-emphasis {
   color: #bcdbe9;
 }
+
+/******************
+** Coming Soon
+*******************/
+
+.coming-soon {
+  text-align: center;
+  margin-top: 20%;
+  font-weight: 300;
+  font-size: 5em;
+}

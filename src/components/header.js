@@ -52,13 +52,13 @@ export default class Header extends Component {
           <Col md={1} className="logo">
             <img src="../style/images/headerImages/KrewBetaLogo.png" />
           </Col>
-          <Col md={11}>
+          {/*<Col md={11}>
             <ul className="header-button-panel">
               <li><a className="header-button">Learn</a></li>
               { !this.state.loggedIn ? <li><a className="header-button" onClick={this.openRegisterModal}>Join Us</a></li> : null }
               { !this.state.loggedIn ? <li><a className="header-button" onClick={this.openLoginModal}>Log In</a></li> : <Button onClick={this.logout}>Log Out</Button> }
             </ul>
-          </Col>
+          </Col>*/}
         </Row>
 
         <Modal show={this.state.showLoginModal} onHide={this.closeModal}>
