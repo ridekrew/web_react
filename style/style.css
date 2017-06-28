@@ -163,6 +163,10 @@ header {
   font-weight: 300;
 }
 
+.price-loader {
+  margin-top: 35px;
+}
+
 .price-column {
   border-right: 1px solid black;
 }

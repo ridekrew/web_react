@@ -3,6 +3,7 @@ import { Button, Row, Col } from 'react-bootstrap';
 import RiderPanel from './common/riderPanel';
 import Price from './common/price';
 import PlacesAutocomplete from 'react-places-autocomplete';
+import Halogen from 'halogen';
 
 class BookingForm extends Component {
     constructor(props) {
@@ -127,7 +128,7 @@ class BookingForm extends Component {
                             <RiderPanel addRider={this.addRider} removeRider = {this.removeRider} riders={this.state.riders}/>
                         </Col>
                         <Col md={7}>
-                            {this.state.priceLoaded ? <Price price={this.state.price} riders={this.state.riders}/> : null }
+                            {this.state.priceLoaded ? <Price price={this.state.price} riders={this.state.riders}/> : <Halogen.ScaleLoader className="price-loader" color={'#f0a5a7'}/> }
                         </Col>
                     </Row>
                 </div>
