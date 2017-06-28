@@ -234,6 +234,7 @@ header {
 
 .education-image-carousel img {
   border-radius: 10px;
+  width: 70%;
 }
 
 .education-panel {
