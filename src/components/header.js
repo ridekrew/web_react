@@ -3,7 +3,7 @@ import { Row, Col, Grid, Modal, Button } from 'react-bootstrap';
 
 
 export default class Header extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -11,36 +11,42 @@ export default class Header extends Component {
       showRegisterModal: false,
       loggedIn: false
     };
+    this.openLoginModal = this.openLoginModal.bind(this);
+    this.openRegisterModal = this.openRegisterModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
+
   }
 
-  openLoginModal = () => {
+  openLoginModal() {
     this.setState({
       showLoginModal: true,
       showRegisterModal: false
     });
   }
 
-  openRegisterModal = () => {
+  openRegisterModal() {
     this.setState({
       showRegisterModal: true,
       showLoginModal: false
     });
   }
 
-  closeModal = () => {
+  closeModal() {
     this.setState({
       showLoginModal: false,
-      showRegisterModal: false 
+      showRegisterModal: false
     });
   }
 
-  login = () => {
+  login() {
     this.setState({
       loggedIn: true
     });
   }
 
-  logout = () => {
+  logout() {
     this.setState({
       loggedIn: false
     });

@@ -4,7 +4,7 @@ import BookingForm from './bookingForm';
 import InfoPanel from './infoPanel';
 import EducationPanel from './educationPanel';
 
-const google = window.google;
+//const google = window.google;
 
 export default class App extends Component {
 
@@ -14,22 +14,25 @@ export default class App extends Component {
             origin: '',
             destination: ''
         }
+        this.updateOrigin = this.updateOrigin.bind(this);
+        this.updateDestination = this.updateDestination.bind(this);
+        this.validAddress = this.validAddress.bind(this);
     }
 
-    updateOrigin = (address) => {
-        this.setState({
-            origin: address
-        });
+    updateOrigin(address) {
+      this.setState({
+          origin: address
+      });
     }
 
-    updateDestination = (address) => {
-        this.setState({
-            destination: address
-        });
+    updateDestination(address) {
+      this.setState({
+          destination: address
+      });
     }
 
-    validAddress = (address) => {
-        return false;
+    validAddress(address) {
+      return false;
     }
 
     render() {

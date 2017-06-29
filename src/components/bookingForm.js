@@ -13,44 +13,50 @@ class BookingForm extends Component {
             price: 0,
             priceLoaded: true
         }
+        this.updateDate = this.updateDate.bind(this);
+        this.addRider = this.addRider.bind(this);
+        this.removeRider = this.removeRider.bind(this);
+        this.handleOrigin = this.handleOrigin.bind(this);
+        this.handleDestination = this.handleDestination.bind(this);
+        this.calculatePrice = this.calculatePrice.bind(this);
     }
 
-    updateDate = (e) => {
-        this.setState({ 
-            date: e.target.value
-        });
+    updateDate(e) {
+      this.setState({
+          date: e.target.value
+      });
     }
 
-    addRider = () => {
+    addRider() {
         this.setState({
             riders: this.state.riders += 1
         });
     }
 
-    removeRider = () => {
+    removeRider() {
         this.setState({
             riders: this.state.riders -= 1
         });
     }
 
-    handleOrigin = (address) => {
+    handleOrigin(address) {
         this.props.updateOrigin(address);
         this.calculatePrice(address, this.props.destination);
     }
 
-    handleDestination = (address) => {
+    handleDestination(address) {
         this.props.updateDestination(address);
         this.calculatePrice(this.props.origin, address);
     }
 
-    calculatePrice = (origin, destination) => {
+    calculatePrice(origin, destination) {
         this.setState({
             priceLoaded: false
         });
         var origin = [origin];
         var destination = [destination];
         var distanceMatrix = new google.maps.DistanceMatrixService();
-		var distanceRequest = { origins: origin, destinations: destination, travelMode: google.maps.TravelMode.DRIVING, unitSystem: google.maps.UnitSystem.IMPERIAL, avoidHighways: false, avoidTolls: false };
+		    var distanceRequest = { origins: origin, destinations: destination, travelMode: google.maps.TravelMode.DRIVING, unitSystem: google.maps.UnitSystem.IMPERIAL, avoidHighways: false, avoidTolls: false };
         var price = 0;
         if (origin == '' || destination == '') {
             this.setState({

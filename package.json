@@ -5,9 +5,12 @@
   "main": "index.js",
   "repository": "git@github.com:ridekrew/web_react.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "webpack-dev-server --inline --content-base public/ --history-api-fallback",
+    "start:prod": "npm run build && node server.bundle.js",
+    "build:client": "webpack",
+    "build:server": "webpack --config webpack.server.config.js",
+    "build": "npm run build:client && npm run build:server"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +30,7 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
+    "json-loader": "^0.5.4",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-bootstrap": "^0.31.0",

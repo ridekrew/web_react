@@ -2,18 +2,20 @@ module.exports = {
   entry: [
     './src/index.js'
   ],
+  target: 'node',
   output: {
     path: __dirname,
     publicPath: '/',
     filename: 'bundle.js'
   },
+  //externals: nodeModules,
   module: {
     loaders: [{
       exclude: /node_modules/,
       loader: 'babel',
       query: {
         presets: ['react', 'es2015', 'stage-1']
-      }
+      },
     }]
   },
   resolve: {
