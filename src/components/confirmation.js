@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import Header from './header';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
-import { Elements, injectStripe, CardElement } from 'react-stripe-elements';
+import { Elements } from 'react-stripe-elements';
 import Price from './common/price';
+import CheckoutForm from './common/checkoutForm';
 
 export default class Confirmation extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
             <div>
@@ -54,7 +60,7 @@ export default class Confirmation extends Component {
                         <Col md={4}>
                             <h2>Payment Method</h2>
                             <Elements>
-                                <CardElement />
+                                <CheckoutForm />
                             </Elements>
                         </Col>
                         <Col md={4}>
