@@ -254,3 +254,43 @@ header {
 .education-emphasis {
   color: #bcdbe9;
 }
+
+/******************
+** Confirmation
+*******************/
+.confirmation-header {
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
+  margin-bottom: 30px;
+}
+
+.confirmation-header h1 {
+  font-size: 3.2em;
+}
+
+.confirmation-summary p {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.confirmation-summary {
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid gray;
+}
+
+#confirmation-num-riders {
+  margin-bottom: 36px;
+}
+
+.confirmation-payment h2 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.confirmation-payment {
+  border-bottom: 1px solid gray;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
