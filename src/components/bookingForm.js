@@ -5,6 +5,7 @@ import Price from './common/price';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import Halogen from 'halogen';
 import { Link } from 'react-router';
+import request from 'superagent';
 
 class BookingForm extends Component {
     constructor(props) {
@@ -49,10 +50,6 @@ class BookingForm extends Component {
         this.setState({
             priceLoaded: false
         });
-        var origin = [origin];
-        var destination = [destination];
-        var distanceMatrix = new google.maps.DistanceMatrixService();
-		var distanceRequest = { origins: origin, destinations: destination, travelMode: google.maps.TravelMode.DRIVING, unitSystem: google.maps.UnitSystem.IMPERIAL, avoidHighways: false, avoidTolls: false };
         var price = 0;
         if (origin == '' || destination == '') {
             this.setState({
@@ -60,28 +57,15 @@ class BookingForm extends Component {
             });
             return price;
         } else {
-            distanceMatrix.getDistanceMatrix(distanceRequest, (response, status) => {
-                if (status !== google.maps.DistanceMatrixStatus.OK) {
-                    console.log("There was an error.");
-                } else {
-                    console.log(response);
-                    var responseFields = response.rows[0].elements[0];
-                    var distance = responseFields.distance.value / 1609.344; // Convert meters to miles for use in pricing model
-                    var duration = responseFields.duration.value / 60.0; // Convert seconds to minutes
-                    console.log("Distance", distance, "Duration", duration);
-                    if (distance <= 100) {
-                        price = ((0.5 * duration + 0.2 * distance) * 1.4) + 1.5
-                    } else if (distance <= 200) {
-                        price = ((0.44 * duration + 0.18 * distance) * 1.325) + 1.5
-                    } else {
-                        price = ((0.4166 * duration + 0.16 * distance) * 1.25) + 1.5
-                    }
-                }
+            request
+            .post('http://krew-dev-api.herokuapp.com/api/rides/price?key=test')
+            .send({ origin: origin, destination: destination })
+            .end((err, res) => {
+                price = res.body.price.toFixed(2);
                 this.setState({
-                    price: price,
-                    priceLoaded: true
+                    priceLoaded: true,
+                    price: price
                 });
-                return this.state.price;
             });
         }
     }
@@ -126,15 +110,15 @@ class BookingForm extends Component {
                     <Row className="rider-panel">
                         <Col md={5}>
                             <h3 className="riders-header">How big is your Krew?</h3>
-                            <RiderPanel addRider={this.addRider} removeRider = {this.removeRider} riders={this.state.riders}/>
+                            <RiderPanel addRider={this.addRider} removeRider={this.removeRider} riders={this.state.riders}/>
                         </Col>
                         <Col md={7}>
                             {this.state.priceLoaded ? <Price price={this.state.price} riders={this.state.riders}/> : <Halogen.ScaleLoader className="price-loader" color={'#f0a5a7'}/> }
-                                <Row>
-                                    <Link to="confirmation">
-                                    <Button className="booking-button">View Available Bookings</Button>
-                                    </Link>
-                                </Row>
+                            <Row>
+                                <Link to="confirmation">
+                                    <Button className="booking-button">Book Ride</Button>
+                                </Link>
+                            </Row>
                         </Col>
                     </Row>
                 </div>
