@@ -1,6 +1,6 @@
 import { Route, IndexRoute } from 'react-router';
 import App from './components/app';
-import BookingForm from './components/bookingForm';
+import BookingForm from './components/bookingForm/bookingForm';
 import React from 'react';
 
 export default (

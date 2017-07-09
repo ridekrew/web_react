@@ -1,0 +1,45 @@
+.infoPanel h3 {
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+.firstInfoHeader {
+  margin-top: 0 !important;
+}
+
+.infoImageCaption {
+  text-align: center;
+  margin: 0;
+  font-size: .8em;
+}
+
+.infoPrice {
+  color: green;
+}
+
+.infoImageContainer {
+  width: 200px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.infoImagePanel {
+  display: inline-flex;
+}
+
+.infoImage {
+  max-height: 160px;
+  max-width: 160px;
+  cursor: pointer;
+  -webkit-filter: brightness(100%);
+}
+
+.infoImage:hover {
+  -webkit-filter: brightness(40%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Header from './header';
-import BookingForm from './bookingForm';
+import Header from './header/header';
+import BookingForm from './bookingForm/bookingForm';
 import InfoPanel from './infoPanel';
-import EducationPanel from './educationPanel';
+import EducationPanel from './educationPanel/educationPanel';
 
 //const google = window.google;
 
