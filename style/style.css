@@ -153,7 +153,7 @@ header {
   margin: 0;
   text-align: center;
   font-size: 1.8em;
-  color: green;
+  color: #27ae60;
 }
 
 .price-subtitle {
@@ -168,7 +168,7 @@ header {
 }
 
 .price-column {
-  border-right: 1px solid black;
+  border-right: 1px solid #bdbdbd;
 }
 
 .booking-button {
@@ -198,7 +198,7 @@ header {
 }
 
 .info-price {
-  color: green;
+  color: #27ae60;
 }
 
 .info-image-container {
@@ -260,12 +260,14 @@ header {
 *******************/
 .confirmation-header {
   padding-bottom: 5px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #e0e0e0;
   margin-bottom: 30px;
 }
 
 .confirmation-header h1 {
   font-size: 3.2em;
+  font-weight: 300;
+  margin-bottom: 20px;
 }
 
 .confirmation-summary p {
@@ -274,9 +276,9 @@ header {
 }
 
 .confirmation-summary {
-  padding-bottom: 30px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid gray;
+  padding-bottom: 50px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 #confirmation-num-riders {
@@ -285,12 +287,37 @@ header {
 
 .confirmation-payment h2 {
   text-align: center;
-  margin-top: 30px;
   margin-bottom: 30px;
 }
 
 .confirmation-payment {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #e0e0e0;
   padding-bottom: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.confirmation-summary h3 {
+  font-size: 1.5em;
+  color: rgba(45, 156, 219, 0.8);
+  margin-bottom: 15px;
+}
+
+.confirmation-payment h2 {
+  font-size: 1.5em;
+  color: rgba(45, 156, 219, 0.8);
+  margin-bottom: 15px;
+}
+
+#confirmation-book-button {
+    margin-left: 110px;
+    margin-top: 30px;
+    background: #fca1a4;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 300;
+    box-shadow: none;
+    border: none;
+    border-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
 }

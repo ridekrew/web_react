@@ -18,7 +18,7 @@ export default class Confirmation extends Component {
                 <Grid>
                     <Row className="confirmation-header">
                         <Col md={12}>
-                            <h1>Finalize Your Custom Krew Ride</h1>
+                            <h1>Your Krew Ride</h1>
                         </Col>
                     </Row>
                     <Row className="confirmation-summary">
@@ -43,8 +43,9 @@ export default class Confirmation extends Component {
                             <p>3:35 PM</p>
                         </Col>
                         <Col md={4}>
-                            <h3>Krew Size</h3>
-                            <p id="confirmation-num-riders">2 Riders Confirmed</p>
+                            <h3>Krew Info</h3>
+                            <p>2 Riders</p>
+                            <p>(302) 740-4247</p>
                             <br />
                             <br />
                             <br />
@@ -64,14 +65,12 @@ export default class Confirmation extends Component {
                             </Elements>
                         </Col>
                         <Col md={4}>
-                            <Button>Book</Button>
+                            <Button id="confirmation-book-button">Book Ride</Button>
                         </Col>
                     </Row>
                     <Row className="confirmation-disclaimer">
                         <Col md={12}>
                             <p>Krew is not liable for any legal action at any time, seriously don't even try it. By booking this ride, you are agreeing to all Krew terms and conditions.
-                                This is absolutely legally binding and there is absolutely nothing you can do to gain any money from Krew, LLC.Krew is not liable for any legal action at any time, seriously don't even try it. By booking this ride, you are agreeing to all Krew terms and conditions.
-                                This is absolutely legally binding and there is absolutely nothing you can do to gain any money from Krew, LLC.Krew is not liable for any legal action at any time, seriously don't even try it. By booking this ride, you are agreeing to all Krew terms and conditions.
                                 This is absolutely legally binding and there is absolutely nothing you can do to gain any money from Krew, LLC.Krew is not liable for any legal action at any time, seriously don't even try it. By booking this ride, you are agreeing to all Krew terms and conditions.
                                 This is absolutely legally binding and there is absolutely nothing you can do to gain any money from Krew, LLC.</p>
                         </Col>

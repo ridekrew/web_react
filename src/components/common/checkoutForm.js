@@ -22,8 +22,7 @@ class CheckoutForm extends Component {
     render() {
         return (
             <form onSubmit={this.processPayment}>
-                <CardElement style={{base: {fontSize: '1.1em'}}} />
-                <button>Book</button>
+                <CardElement />
             </form>
         );
     }
