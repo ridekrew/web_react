@@ -14,7 +14,7 @@ class BookingForm extends Component {
             date: '',
             riders: 1,
             price: 0,
-            priceLoaded: true
+            priceLoaded: true,
         }
     }
 
