@@ -3,10 +3,11 @@ import Header from './header';
 import BookingForm from './bookingForm';
 import InfoPanel from './infoPanel';
 import EducationPanel from './educationPanel';
+import { Link } from 'react-router';
 
 const google = window.google;
 
-export default class App extends Component {
+export default class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -34,7 +35,6 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <Header />
                 <div className="col-md-5">
                     <BookingForm 
                       updateOrigin={this.updateOrigin} 

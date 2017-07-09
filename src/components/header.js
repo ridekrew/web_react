@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Row, Col, Grid, Modal, Button } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 export default class Header extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -29,7 +30,7 @@ export default class Header extends Component {
   closeModal = () => {
     this.setState({
       showLoginModal: false,
-      showRegisterModal: false 
+      showRegisterModal: false
     });
   }
 
@@ -47,47 +48,48 @@ export default class Header extends Component {
 
   render() {
     return (
-      <header className="container-fluid">
-        <Row>
-          <Col md={1} className="logo">
-            <img src="../style/images/headerImages/KrewBetaLogo.png" />
-          </Col>
-          <Col md={11}>
-            <ul className="header-button-panel">
-              <li><a className="header-button">Learn</a></li>
-              { !this.state.loggedIn ? <li><a className="header-button" onClick={this.openRegisterModal}>Join Us</a></li> : null }
-              { !this.state.loggedIn ? <li><a className="header-button" onClick={this.openLoginModal}>Log In</a></li> : <Button onClick={this.logout}>Log Out</Button> }
-            </ul>
-          </Col>
-        </Row>
+      <div>
+        <header className="container-fluid">
+          <Row>
+            <Col md={1} className="logo">
+              <Link to="/"><img src="../style/images/headerImages/KrewBetaLogo.png" /></Link>
+            </Col>
+            <Col md={11}>
+              <ul className="header-button-panel">
+                <Link to="learn"><li><a className="header-button">Learn</a></li></Link>
+                {!this.state.loggedIn ? <li><a className="header-button" onClick={this.openRegisterModal}>Join Us</a></li> : null}
+                {!this.state.loggedIn ? <li><a className="header-button" onClick={this.openLoginModal}>Log In</a></li> : <Button onClick={this.logout}>Log Out</Button>}
+              </ul>
+            </Col>
+          </Row>
 
-        <Modal show={this.state.showLoginModal} onHide={this.closeModal}>
-          <Modal.Header closeButton>
-            <Modal.Title>
-              <h2>Login to Krew</h2>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            This is the login modal text.
+          <Modal show={this.state.showLoginModal} onHide={this.closeModal}>
+            <Modal.Header closeButton>
+              <Modal.Title>Login to Krew</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              This is the login modal text.
             <Button onClick={this.login}>Log In</Button>
             </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.closeModal}>Close</Button>
-          </Modal.Footer>
-        </Modal>
+            <Modal.Footer>
+              <Button onClick={this.closeModal}>Close</Button>
+            </Modal.Footer>
+          </Modal>
 
-        <Modal show={this.state.showRegisterModal} onHide={this.closeModal}>
-          <Modal.Header closeButton>
-            <Modal.Title>Create a New Account</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            This is the registration modal text.
+          <Modal show={this.state.showRegisterModal} onHide={this.closeModal}>
+            <Modal.Header closeButton>
+              <Modal.Title>Create a New Account</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              This is the registration modal text.
             </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.closeModal}>Close</Button>
-          </Modal.Footer>
-        </Modal>
-      </header>
+            <Modal.Footer>
+              <Button onClick={this.closeModal}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+        </header>
+        {this.props.children}
+      </div>
     );
   }
 }

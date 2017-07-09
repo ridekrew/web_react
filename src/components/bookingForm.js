@@ -4,6 +4,7 @@ import RiderPanel from './common/riderPanel';
 import Price from './common/price';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import Halogen from 'halogen';
+import { Link } from 'react-router';
 
 class BookingForm extends Component {
     constructor(props) {
@@ -129,6 +130,11 @@ class BookingForm extends Component {
                         </Col>
                         <Col md={7}>
                             {this.state.priceLoaded ? <Price price={this.state.price} riders={this.state.riders}/> : <Halogen.ScaleLoader className="price-loader" color={'#f0a5a7'}/> }
+                                <Row>
+                                    <Link to="confirmation">
+                                    <Button className="booking-button">View Available Bookings</Button>
+                                    </Link>
+                                </Row>
                         </Col>
                     </Row>
                 </div>

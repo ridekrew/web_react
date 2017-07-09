@@ -14,7 +14,6 @@ export default class Confirmation extends Component {
     render() {
         return (
             <div>
-                <Header />  
                 <Grid>
                     <Row className="confirmation-header">
                         <Col md={12}>
