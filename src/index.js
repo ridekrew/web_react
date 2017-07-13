@@ -11,6 +11,8 @@ import BookingForm from './components/bookingForm';
 import InfoPanel from './components/infoPanel';
 import reducers from './reducers';
 
+import routes from './routes'
+
 import Confirmation from './components/confirmation';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -18,13 +20,7 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <StripeProvider apiKey="pk_live_t34DtKRcABYPKqN4gLZgYoxx">
-      <Router history={hashHistory}>
-        <Route path="/" component={Header}>
-          <IndexRoute component={Home} />
-          <Route path="confirmation" component={Confirmation} />
-          <Route path="learn" component={Confirmation} />
-        </Route>
-      </Router>
+      <Router history={hashHistory} routes={routes} />
     </StripeProvider>
   </Provider>
   , document.querySelector('.container-fluid'));

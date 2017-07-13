@@ -1,0 +1,217 @@
+.bookingForm__bookingHeader___1pXRw h1 {
+  font-weight: 300;
+  margin-bottom: 40px;
+  font-size: 3em;
+}
+
+.bookingForm__textEmphasis___vpLEH {
+  color: #f0a5a7;
+}
+
+.bookingForm__addressContainer___2voze {
+    border: 1px solid #555555;
+    width: 100%;
+}
+
+.bookingForm__bookingForm___2iCZA input {
+  display: block;
+  margin-top: 60px;
+  border: none;
+  width: 100%;
+  font-size: 1.3em;
+  font-weight: 300;
+  border-bottom: 1px solid #BDBDBD;
+}
+
+.bookingForm__bookingSubmit___2HgLV {
+  float: right;
+  background: #f0a5a7;
+  color: white;
+  font-size: 1.3em !important;
+  border-radius: 10px;
+  width: 120px;
+}
+
+.bookingForm__riderPanel___2Pds1 {
+  margin-top: 50px;
+  margin-bottom: 35px;
+  height: 125px;
+  text-align: center;
+}
+
+.bookingForm__ridersHeader___2Op5Q {
+  font-weight: 300;
+  font-size: 1.3em;
+  text-align: center;
+}
+.price__price___E0Lje {
+  margin: 0;
+  text-align: center;
+  font-size: 1.8em;
+  color: green;
+}
+
+.price__priceSubtitle___Byvvj {
+  text-align: center;
+  margin: 0;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.price__priceColumn___2CaZa {
+  border-right: 1px solid black;
+}
+
+.price__bookingButton___3VDwM {
+  margin-top: 30px;
+  width: 100%;
+  background-color: #f0a5a7;
+  color: white;
+  font-size: 1.5em !important;
+  font-weight: 300 !important;
+}
+.riderPanel__riders___dZ1DW {
+  font-size: 3.8em;
+  cursor: pointer;
+}
+
+.riderPanel__newRiders___BBYt4 {
+  margin-left: 8px;
+  font-size: 4.2em;
+  cursor: pointer;
+}
+
+.riderPanel__riders___dZ1DW path {
+  color: #bcdbe9;
+}
+
+#riderPanel__firstRider___3fe3K {
+  cursor: default;
+}
+
+#riderPanel__firstRider___3fe3K path:hover {
+  color: #bcdbe9 !important;
+}
+
+.riderPanel__riders___dZ1DW path:hover {
+  color: #f0a5a7;
+}
+
+.riderPanel__newRiders___BBYt4 path {
+  height: 55px;
+}
+
+.riderPanel__newRiders___BBYt4 path:hover {
+  color: green;
+}
+
+.riderPanel__riderText___2sja3 {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1em;
+}
+.educationPanel__educationImageCarousel___1k8hz img {
+  border-radius: 10px;
+  width: 70%;
+}
+
+.educationPanel__educationPanel___8jLNB {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.educationPanel__educationPanel___8jLNB h1 {
+  margin-bottom: 30px;
+}
+
+.educationPanel__educationPanel___8jLNB h3 {
+  margin-top: 30px;
+  font-weight: 300;
+}
+
+.educationPanel__educationEmphasis___2bBaR {
+  color: #bcdbe9;
+}
+.infoPanelImage__infoPanel___1yDLF h3 {
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+.infoPanelImage__firstInfoHeader___10qhL {
+  margin-top: 0 !important;
+}
+
+.infoPanelImage__infoImageCaption___QCEWV {
+  text-align: center;
+  margin: 0;
+  font-size: .8em;
+}
+
+.infoPanelImage__infoPrice___15nOP {
+  color: green;
+}
+
+.infoPanelImage__infoImageContainer___1jIWa {
+  width: 200px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.infoPanelImage__infoImagePanel___24Xbu {
+  display: inline-flex;
+}
+
+.infoPanelImage__infoImage___1csJi {
+  max-height: 160px;
+  max-width: 160px;
+  cursor: pointer;
+  -webkit-filter: brightness(100%);
+}
+
+.infoPanelImage__infoImage___1csJi:hover {
+  -webkit-filter: brightness(40%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+header {
+  display: inline-block;
+  background-color: white;
+  border-bottom: 1px solid #BDBDBD;
+  margin-bottom: 30px;
+}
+
+.header__logo___3xoBS img {
+  margin-top: 15px;
+  margin-bottom: 12px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.header__headerButtonPanel___2vz67 {
+  list-style-type: none;
+  margin-bottom: 0;
+  margin-top: 15px;
+  text-align: right;
+}
+
+.header__headerButtonPanel___2vz67 li {
+  display: inline;
+  margin-left: 25px;
+}
+
+.header__headerButton___krAU1 {
+  color: #4F4F4F;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+.header__headerButton___krAU1:hover {
+    color: #f0a5a7;
+    text-decoration: none;
+}
